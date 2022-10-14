@@ -91,6 +91,13 @@ public class VariablesTheme {
        System.out.println("   " + c + "                         " + (char)c);
        System.out.println("   " + d + "                         " + (char)d);
        System.out.println("   " + e + "                         " + (char)e);  */
+
+       System.out.println("\nОтображение количества сотен, десятков и единиц числа.");
+       int n = 123, x, y, z;
+       x = n / 100;
+       y = n % 100 / 10;
+       z = n % 100 % 10;
+       System.out.println("Число " + n + " содержит " + x + " сотен, " + y + " десятков, " + z + " единиц.");
     }
 }
 
