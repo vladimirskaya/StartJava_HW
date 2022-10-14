@@ -81,9 +81,16 @@ public class VariablesTheme {
        a = a ^ b;
        b = a ^ b;
        a = a ^ b;
-       System.out.println("Новые значение переменных:    a = " + a + ", b = " + b); */
+       System.out.println("Новые значение переменных:    a = " + a + ", b = " + b); 
 
-
+       System.out.println("\nВывод символов и их кодов");
+       int  a = 35, b = 38, c = 64, d = 94, e = 95;
+       System.out.println("Код символа           Соответствующий ему символ из ASCII-тафблицы");
+       System.out.println("   " + a + "                         " + (char)a);
+       System.out.println("   " + b + "                         " + (char)b);
+       System.out.println("   " + c + "                         " + (char)c);
+       System.out.println("   " + d + "                         " + (char)d);
+       System.out.println("   " + e + "                         " + (char)e);  */
     }
 }
 
