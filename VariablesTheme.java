@@ -82,11 +82,11 @@ public class VariablesTheme {
        System.out.println("\n6. Вывод символов и их кодов.");
        int  a1 = 35, b1 = 38, c1 = 64, d1 = 94, e1 = 95;
        System.out.println("Код символа           Соответствующий ему символ из ASCII-тафблицы");
-       System.out.println("   " + a1 + "                         " + (char)a1);
-       System.out.println("   " + b1 + "                         " + (char)b1);
-       System.out.println("   " + c1 + "                         " + (char)c1);
-       System.out.println("   " + d1 + "                         " + (char)d1);
-       System.out.println("   " + e1 + "                         " + (char)e1);  
+       System.out.println("   " + a1 + "                         " + (char) a1);
+       System.out.println("   " + b1 + "                         " + (char) b1);
+       System.out.println("   " + c1 + "                         " + (char) c1);
+       System.out.println("   " + d1 + "                         " + (char) d1);
+       System.out.println("   " + e1 + "                         " + (char) e1);  
 
        System.out.println("\n7. Отображение количества сотен, десятков и единиц числа.");
        int n1 = 123, x, y, z;
