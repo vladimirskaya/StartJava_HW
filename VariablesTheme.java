@@ -90,15 +90,31 @@ public class VariablesTheme {
        System.out.println("   " + b + "                         " + (char)b);
        System.out.println("   " + c + "                         " + (char)c);
        System.out.println("   " + d + "                         " + (char)d);
-       System.out.println("   " + e + "                         " + (char)e);  */
+       System.out.println("   " + e + "                         " + (char)e);  
 
        System.out.println("\nОтображение количества сотен, десятков и единиц числа.");
        int n = 123, x, y, z;
        x = n / 100;
        y = n % 100 / 10;
        z = n % 100 % 10;
-       System.out.println("Число " + n + " содержит " + x + " сотен, " + y + " десятков, " + z + " единиц.");
+       System.out.println("Число " + n + " содержит " + x + " сотен, " + y + " десятков, " + z + " единиц."); */
+
+       System.out.println("\n8. Вывод на консоль ASCII-арт Дюка.");
+       char slash = '/';
+       char backSlash = '\\';
+       char openBracket = '(';
+       char endBracket = ')';
+       char underline = '_';
+       System.out.println("    " + slash + backSlash);
+       System.out.println("   " + slash + "  " + backSlash);
+       System.out.println("  " + slash + underline + openBracket + " " + endBracket + backSlash);
+       System.out.println(" " + slash + "      " + backSlash);
+       System.out.println("" + slash + underline + underline + underline + underline
+                            + slash + backSlash + underline + underline + backSlash); 
     }
 }
+
+
+
 
 
