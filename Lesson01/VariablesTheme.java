@@ -2,14 +2,14 @@ public class VariablesTheme {
 
     public static void main(String arg[]) {
         System.out.println("\n1. Создание переменных и вывод их значений на консоль.");
-        byte prosAmount = 1;
+        byte cpuAmount = 1;
         short systemType = 64;
         int memoryCapacity = 8076;
         long virtualMemoryCapacity = 14476;
         float cpuFrequency = 1.9f;
         double displaySize = 15.60;
         char networkAdapters = '4';
-        System.out.println("Количество процессоров: " + prosAmount);
+        System.out.println("Количество процессоров: " + cpuAmount);
         System.out.println("Тип системы: x" + systemType + "-based PC ");
         System.out.println("Полный объем физической памяти: " + memoryCapacity + " МБ");
         System.out.println("Виртуальная память: Макс. размер: " + virtualMemoryCapacity + " МБ");
@@ -22,7 +22,7 @@ public class VariablesTheme {
         double bookPrice = 200;
         float discountPercent = 11.0f;
         double discount = (penPrice + bookPrice) * discountPercent / 100;
-        double  discountPrice = (penPrice + bookPrice) - discount;
+        double discountPrice = (penPrice + bookPrice) - discount;
         System.out.println("Сумма скидки: " + discount + " рублей.");
         System.out.println("Общая сумма с учетом скидки: " + discountPrice + " рублей.");
 
@@ -87,9 +87,9 @@ public class VariablesTheme {
        System.out.println("Новые значение переменных:    a = " + a + ", b = " + b);
        System.out.println("\n3. С помощью побитовой операции");
        System.out.println("Исходные значение переменных: a = " + a + ", b = " + b);
-       a = a ^ b;
+       a ^= b;
        b = a ^ b;
-       a = a ^ b;
+       a ^= b;
        System.out.println("Новые значение переменных:    a = " + a + ", b = " + b); 
 
        System.out.println("\n6. Вывод символов и их кодов.");
@@ -110,8 +110,8 @@ public class VariablesTheme {
        int x = srcNum / 100;
        int y = srcNum % 100 / 10;
        int z = srcNum % 10;
-       System.out.println("Число " + srcNum + " содержит " + x + " сотен, " + y + " десятков, " 
-                                    + z + " единиц."); 
+       System.out.println("Число " + srcNum + " содержит " + x + " сотен, " + y + " десятков, "
+                + z + " единиц."); 
 
        System.out.println("\n8. Вывод на консоль ASCII-арт Дюка.");
        char slash = '/';
