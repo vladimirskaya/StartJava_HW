@@ -1,6 +1,6 @@
 public class VariablesTheme {
 
-    public static void main(String arg[]) {
+    public static void main(String[] arg) {
         System.out.println("\n1. Создание переменных и вывод их значений на консоль.");
         byte cpuAmount = 1;
         short systemType = 64;
