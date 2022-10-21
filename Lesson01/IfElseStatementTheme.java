@@ -42,48 +42,44 @@ public class IfElseStatementTheme {
 
         System.out.println("\n3. Работа с числом.");
         int num = -9;
-        if (num == 0) {
-            System.out.println("Число num = " + num + " равно нулю.");
-        } else {
+        System.out.println("Число " + num);
+        if (num != 0) {
             if (num % 2 == 0) {
-                if (num > 0) {
-                    System.out.println("Число num = " + num + " четное положительное.");
-                } else {
-                    System.out.println("Число num = " + num + " четное положительное.");
-                }
+                System.out.print("Число чётное");
             } else {
-                if (num > 0) {
-                    System.out.println("Число num = " + num + " нечетное положительное.");
-                } else{
-                    System.out.println("Число num = " + num + " нечетное отрицательное.");
-                }
+                System.out.print("Число нечетное");
+            }
+            if (num >= 0) {
+                System.out.print(" и положительное");
+            } else {
+                System.out.print(" и отрицательное");
             }
         }
 
-        System.out.println("\n4.Поиск одинаковых цифр в числах");
+        System.out.println("\n\n4.Поиск одинаковых цифр в числах");
         int num1 = 333;
         int num2 = 331;
-        boolean isIdentical = false;
+        boolean equalDigits = false;
         System.out.println("Исходные числа: " + num1 + " и " + num2);
         int digit1 = num1 / 100;
         int digit2 = num2 / 100;
         if (digit1 == digit2) {
-            isIdentical = true;
+            equalDigits = true;
             System.out.println("Числа имеют одинаковую цифру " + digit1 + " на 1 разряде.");
         }
         digit1 = num1 % 100 / 10;
         digit2 = num2 % 100 / 10;
         if (digit1 == digit2) {
-            isIdentical = true;
+            equalDigits = true;
             System.out.println("Числа имеют одинаковую цифру " + digit1 + " на 2 разряде.");
         }
         digit1 = num1 % 10;
         digit2 = num2 % 10;
         if (digit1 == digit2) {
-            isIdentical = true;
+            equalDigits = true;
             System.out.println("Числа имеют одинаковую цифру " + digit1 + " на 3 разряде.");
         }
-        if (!isIdentical) {
+        if (!equalDigits) {
             System.out.println("В данных числах нет одинаковых цифр на соответствующих разрядах.");
         }
 
@@ -91,9 +87,9 @@ public class IfElseStatementTheme {
         char symbol = '\u0057';
         if ((symbol >= (char) '0') && (symbol <= (char) '9')) {
             System.out.println("Значение " + symbol + " является цифрой."); 
-        } else if ((symbol >= (char) 'A') && (symbol <= (char) 'Z')) {
+        } else if ((symbol >= 'A') && (symbol <= 'Z')) {
             System.out.println("Значение " + symbol + " является заглавной буквой.");
-        } else if ((symbol >= (char) 'a') && (symbol <= (char) 'z')) {
+        } else if ((symbol >= 'a') && (symbol <= 'z')) {
             System.out.println("Значение " + symbol + " прописной буквой.");
         } else {
             System.out.println("Значение " + symbol + " является ни буквой, ни цифрой.");
@@ -118,16 +114,14 @@ public class IfElseStatementTheme {
         System.out.println("\n7. Определение оценки по предметам.");
         int historyRate = 59;
         int programmingRate = 91;
-        int historyBall;
-        int programmingBall;
+        int historyBall = 2;
+        int programmingBall = 2;
         if (historyRate > 91) {
             historyBall = 5;
         } else if (historyRate > 73) {
             historyBall = 4;
         } else if (historyRate > 60) {
             historyBall = 3;
-        } else {
-            historyBall = 2;
         }
         if (programmingRate > 91) {
             programmingBall = 5;
@@ -135,9 +129,7 @@ public class IfElseStatementTheme {
             programmingBall = 4;
         } else if (programmingRate > 60) {
             programmingBall = 3;
-        } else {
-            programmingBall = 2;
-        }
+        } 
         System.out.println(historyBall + " - история");
         System.out.println(programmingBall + " - программирование");
         System.out.println((historyBall + programmingBall) / 2 + " - средний балл оценок по предметам");
