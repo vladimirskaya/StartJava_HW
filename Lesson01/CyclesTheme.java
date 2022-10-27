@@ -201,7 +201,7 @@ public class CyclesTheme {
             number10 %= z;
             z /= 10;
         }
-        System.out.print("\nСумма цифр abc = " + abc + ", sum = " + sum10 + "\nЧисло ");
+        System.out.print("Сумма цифр abc = " + abc + ", sum = " + sum10 + "\nЧисло ");
         if (abc == sum10) {
             System.out.println("является счастливым.");
         } else {
