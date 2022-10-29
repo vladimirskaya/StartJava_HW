@@ -2,17 +2,18 @@ public class CyclesTheme {
     
     public static void main(String[] arg) {
         System.out.println("\n1. Подсчет суммы четных и нечетных чисел.");
-        int period = -10;
+        int startSement = -10;
+        int endSegment = 21;
         int sumEvenNumbers = 0;
         int sumOddNumbers = 0;
         do {
-            if (period % 2 == 0) {
-                sumEvenNumbers += period;
+            if (startSement % 2 == 0) {
+                sumEvenNumbers += startSement;
             } else {
-                sumOddNumbers += period;
+                sumOddNumbers += startSement;
             }
-            period++;
-        } while (period < 21);
+            startSement++;
+        } while (startSement <= endSegment);
         System.out.println("В промежутке [-10; 21] сумма четных чисел = " + sumEvenNumbers + 
                 " , а нечетных = " + sumOddNumbers);
 
@@ -20,87 +21,68 @@ public class CyclesTheme {
         int a = 10;
         int b = 5;
         int c = -1;
-        int max;
-        int min;
-        if (a > b) {
-            if (a > c) {
-                max = a;
-                if ( b > c) {
-                    min = c;
-                } else {
-                    min = b;
-                }
-            } else {
-                max = c;
-                min = b;
-            }
-        } else {
-            if (b > c) {
-                max = b;
-                if (a > c) {
-                    min = c;
-                } else {
-                    min = a;
-                }
-            } else {
-                max = c;
-                min = a;
-            }
+        int max = 0;
+        int min = 0;
+        if ((a > b) && (a > c)) {
+            max = a;
+            min = b < c ? b : c;
+        }
+        if ((b > a) && (b > c)) {
+            max = b;
+            min = a < c ? a : b;
+        }
+        if ((c > a) && (c > b)) {
+            max = c;
+            min = a < b ? a : b;
         }
         for (int i = max - 1; i > min; i--){
             System.out.print( i + " ");
         }
-        System.out.print("\n");
 
-        System.out.println("\n3. Вывод реверсивного числа и суммы его цифр.");
+        System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр.");
         int num3 = 1234;
-        int sum3 = 0;
-        int x;
+        int sumDigits = 0;
+        int digit;
         while (num3 != 0) {
-            x = num3 % 10;
-            System.out.print(x);
+            digit = num3 % 10;
+            System.out.print(digit);
             num3 /= 10;
-            sum3 += x;
+            sumDigits += digit;
         }
-        System.out.println("\nСумма цифр = " + sum3);
+        System.out.println("\nСумма цифр = " + sumDigits);
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк.");
-        int x1 = 1;
-        int x2 = 24;
-        int step = 2;
+        int halfOpenInterval = 24;
         int amountNumbers = 0;
-        int amountNumbersInString = 5;
-        int allNumbers = (x2 - x1 + 1) / step;
-        for (int i = x1; i < x2; i = i + step) {
+        int amountNumsPerLine = 5;
+        for (int i = 1; i < halfOpenInterval; i += 2) {
             amountNumbers++;
-            if (amountNumbers % amountNumbersInString != 0) {
-                System.out.printf("%5d", i);
-            } else {
-                System.out.printf("%5d%n", i);
+            System.out.printf("%5d", i);
+            if (amountNumbers % amountNumsPerLine == 0) {
+                System.out.printf("%n", i);
             }
-            if (amountNumbers == allNumbers) {
-                for (int j = amountNumbers % amountNumbersInString; j < amountNumbersInString; j++) {
+        }
+        if (amountNumbers == halfOpenInterval / 2) {
+                for (int j = amountNumbers % amountNumsPerLine; j < amountNumsPerLine; j++) {
                     System.out.printf("%5d", 0);
                 }
             }
-        }
 
         System.out.println("\n\n5. Проверка количества единиц на четность.");
         int num5 = 3141591;
-        int duplicateNum = num5;
-        int lastNumber = 0;
-        int amountOf1 = 0;
+        int copyNum5 = num5;
+        int amountOnes = 0;
         while (num5 != 0) {
-            lastNumber = num5 % 10;
-            if (lastNumber == 1) {
-                amountOf1++;
+            int digit5 = num5 % 10;
+            if (digit5 == 1) {
+                amountOnes++;
             }
             num5 /= 10;
         }
-        if (amountOf1 % 2 == 0) {
-            System.out.println("Число " + duplicateNum + " содержит четное количество единиц.");
+        if (amountOnes % 2 == 0) {
+            System.out.println("Число " + copyNum5 + " содержит четное количество единиц.");
         } else {
-            System.out.println("Число " + duplicateNum +" содержит нечетное количество единиц.");
+            System.out.println("Число " + copyNum5 +" содержит нечетное количество единиц.");
         }
 
         System.out.println("\n6. Отображение фигур в консоли.");
