@@ -18,71 +18,65 @@ public class CyclesTheme {
                 " , а нечетных = " + sumOddNumbers);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания.");
-        int a = 10;
-        int b = 5;
+        int min = 10;
+        int max = 5;
         int c = -1;
-        int max = 0;
-        int min = 0;
-        if ((a > b) && (a > c)) {
-            max = a;
-            min = b < c ? b : c;
+        if (min > max) {
+            max = min;
+            min = max;
         }
-        if ((b > a) && (b > c)) {
-            max = b;
-            min = a < c ? a : b;
+        if (min > c) {
+            min = c;
         }
-        if ((c > a) && (c > b)) {
+        if (c > max) {
             max = c;
-            min = a < b ? a : b;
         }
         for (int i = max - 1; i > min; i--){
             System.out.print( i + " ");
         }
 
         System.out.println("\n\n3. Вывод реверсивного числа и суммы его цифр.");
-        int num3 = 1234;
+        int number3 = 1234;
         int sumDigits = 0;
-        int digit;
-        while (num3 != 0) {
-            digit = num3 % 10;
+        while (number3 != 0) {
+            int digit = number3 % 10;
             System.out.print(digit);
-            num3 /= 10;
+            number3 /= 10; 
             sumDigits += digit;
         }
         System.out.println("\nСумма цифр = " + sumDigits);
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк.");
-        int halfOpenInterval = 24;
+        int endOpenInterval = 24;
         int amountNumbers = 0;
-        int amountNumsPerLine = 5;
-        for (int i = 1; i < halfOpenInterval; i += 2) {
+        int amountNumbersPerLine = 5;
+        for (int i = 1; i < endOpenInterval; i += 2) {
             amountNumbers++;
             System.out.printf("%5d", i);
-            if (amountNumbers % amountNumsPerLine == 0) {
-                System.out.printf("%n", i);
+            if (amountNumbers % amountNumbersPerLine == 0) {
+                System.out.println();
             }
         }
-        if (amountNumbers == halfOpenInterval / 2) {
-                for (int j = amountNumbers % amountNumsPerLine; j < amountNumsPerLine; j++) {
-                    System.out.printf("%5d", 0);
-                }
-            }
+        for (int j = amountNumbers % amountNumbersPerLine; j < amountNumbersPerLine; j++) {
+            System.out.printf("%5d", 0);
+        }
+        
 
         System.out.println("\n\n5. Проверка количества единиц на четность.");
-        int num5 = 3141591;
-        int copyNum5 = num5;
+        int number5 = 3141591;
+        int copyNumber5 = number5;
         int amountOnes = 0;
-        while (num5 != 0) {
-            int digit5 = num5 % 10;
-            if (digit5 == 1) {
+        while (number5 != 0) {
+            int digit = number5 % 10;
+            if (digit == 1) {
                 amountOnes++;
             }
-            num5 /= 10;
+            number5 /= 10;
         }
         if (amountOnes % 2 == 0) {
-            System.out.println("Число " + copyNum5 + " содержит четное количество единиц.");
+            System.out.println("Число " + copyNumber5 + " содержит четное количество единиц.");
         } else {
-            System.out.println("Число " + copyNum5 +" содержит нечетное количество единиц.");
+            System.out.println("Число " + copyNumber5 +" содержит нечетное количество единиц.");
         }
 
         System.out.println("\n6. Отображение фигур в консоли.");
@@ -92,8 +86,9 @@ public class CyclesTheme {
             for (int j = 0; j < length; j++) {
                 System.out.print("*");
             }
-            System.out.print("\n");
+            System.out.println();
         }
+        System.out.println();
         length = 5;
         height = 5;
         int currentHeight = 0;
@@ -107,46 +102,40 @@ public class CyclesTheme {
             currentHeight++;
             currentLength = length - currentHeight;
         }
-
+        System.out.println();
         height = 5;
         length = 3;
         currentHeight = 0;
         currentLength = 0;
-        int count = 0;
+        int count = 1;
         do {
             currentHeight++;
             if (currentHeight <= 3) {
-                do {
-                    System.out.print("$");
                     currentLength++;
-                } while (currentLength < currentHeight);
-                currentLength = 0;
-            } else {
-                count++;
-                currentLength = length - count;
-                do {
-                    System.out.print("$");
+                } else if (currentHeight <= 5) {
                     currentLength--;
-                } while (currentLength > 0);
-            }
-            System.out.print("\n");
-        } while ( currentHeight < height);
+                }
+            int cycles = currentLength;
+            do {
+                System.out.print("$");
+                cycles--;
+            } while (cycles > 0);
+            System.out.println();
+           
+            
+        } while (currentHeight < height);
 
         System.out.println("\n7. Отображение ASCII-символов.");
-        int dec = 0;
-        char chr;
         System.out.printf("%10s", "Dec");
         System.out.printf("%10s%n", "Char");
         for (int i = 0; i < 48; i++) {
             if (i % 2 == 1) {
-                System.out.printf("%10d", i);
-                System.out.printf("%10s%n", (char) i);
+                System.out.printf("%10d%10c%n", i, i);
             }
         }
         for (int i = 97; i < 123; i++) {
             if (i % 2 == 0) {
-                System.out.printf("%10d", i);
-                System.out.printf("%10s%n", (char) i);
+                System.out.printf("%10d%10c%n", i, i);
             }
         } 
 
@@ -209,6 +198,6 @@ public class CyclesTheme {
                 System.out.print("\n-------------------------------------");
             }
             System.out.print("\n");
-        }
+        }*/
     }
 }
