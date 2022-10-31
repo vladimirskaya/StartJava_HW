@@ -110,9 +110,9 @@ public class CyclesTheme {
         int count = 1;
         do {
             currentHeight++;
-            if (currentHeight <= 3) {
+            if (currentHeight <= height / 2 + 1) {
                     currentLength++;
-                } else if (currentHeight <= 5) {
+                } else if (currentHeight <= height) {
                     currentLength--;
                 }
             int cycles = currentLength;
@@ -198,6 +198,6 @@ public class CyclesTheme {
                 System.out.print("\n-------------------------------------");
             }
             System.out.print("\n");
-        }*/
+        }
     }
 }
