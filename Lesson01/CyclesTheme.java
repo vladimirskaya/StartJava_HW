@@ -18,20 +18,24 @@ public class CyclesTheme {
                 " , а нечетных = " + sumOddNumbers);
 
         System.out.println("\n2. Вывод чисел в интервале (min и max) в порядке убывания.");
-        int min = 10;
-        int max = 5;
+        int a = 10;
+        int b = 5;
         int c = -1;
-        if (min > max) {
-            max = min;
-            min = max;
-        }
-        if (min > c) {
-            min = c;
+        int min = a;
+        int max = b;
+        if (a > max) {
+            max = a;
         }
         if (c > max) {
             max = c;
         }
-        for (int i = max - 1; i > min; i--){
+        if (b < min) {
+            min = b;
+        }
+        if (c < min) {
+            min = c;
+        }
+        for (int i = max - 1; i > min; i--) {
             System.out.print( i + " ");
         }
 
@@ -47,10 +51,10 @@ public class CyclesTheme {
         System.out.println("\nСумма цифр = " + sumDigits);
 
         System.out.println("\n4. Вывод чисел на консоль в несколько строк.");
-        int endOpenInterval = 24;
+        int endHalfInterval = 24;
         int amountNumbers = 0;
         int amountNumbersPerLine = 5;
-        for (int i = 1; i < endOpenInterval; i += 2) {
+        for (int i = 1; i < endHalfInterval; i += 2) {
             amountNumbers++;
             System.out.printf("%5d", i);
             if (amountNumbers % amountNumbersPerLine == 0) {
@@ -60,7 +64,6 @@ public class CyclesTheme {
         for (int j = amountNumbers % amountNumbersPerLine; j < amountNumbersPerLine; j++) {
             System.out.printf("%5d", 0);
         }
-        
 
         System.out.println("\n\n5. Проверка количества единиц на четность.");
         int number5 = 3141591;
@@ -88,7 +91,7 @@ public class CyclesTheme {
             }
             System.out.println();
         }
-        System.out.println();
+
         length = 5;
         height = 5;
         int currentHeight = 0;
@@ -98,11 +101,11 @@ public class CyclesTheme {
                 System.out.print("#");
                 currentLength--;
             }
-            System.out.print("\n");
+            System.out.println();
             currentHeight++;
             currentLength = length - currentHeight;
         }
-        System.out.println();
+
         height = 5;
         length = 3;
         currentHeight = 0;
@@ -121,13 +124,10 @@ public class CyclesTheme {
                 cycles--;
             } while (cycles > 0);
             System.out.println();
-           
-            
         } while (currentHeight < height);
 
         System.out.println("\n7. Отображение ASCII-символов.");
-        System.out.printf("%10s", "Dec");
-        System.out.printf("%10s%n", "Char");
+        System.out.printf("%10s%10s%n", "Dec", "Char");
         for (int i = 0; i < 48; i++) {
             if (i % 2 == 1) {
                 System.out.printf("%10d%10c%n", i, i);
@@ -140,25 +140,20 @@ public class CyclesTheme {
         } 
 
         System.out.println("\n8. Проверка, является ли число палиндромом");
-        int number = 1234321;
-        byte amountEqualNumbers = 0;
-        int y = 1_000_000;
-        int number1;
-        int number2;
-        while (y > 10) {
-            number1 = number / y;
-            number2 = number % 10;
-            if (number1 == number2) {
-                amountEqualNumbers++;
+        int origNumber = 1234321;
+        int compareNumber = 0;
+        int x = origNumber;
+        int order = 1_000_000;
+        while (x != 0) {
+            compareNumber += x % 10 * order;
+            x /= 10;
+            order /= 10;
             }
-            number = (number - y * number1) / 10;
-            y /= 100; 
-            if (amountEqualNumbers == 3) {
-                System.out.println("Число X является палиндромом.");
-            }
+        if (origNumber ==  compareNumber) {
+            System.out.println("Число X является палиндромом.");
         }
 
-        System.out.println("\n10. Определение, является ли число счастливым.");
+        System.out.println("\n9. Определение, является ли число счастливым.");
         int number10 = 111111;
         int abc = 0;
         int sum10 = 0;
@@ -183,12 +178,11 @@ public class CyclesTheme {
         System.out.printf("%28S%n", "таблица Пифагора");
         for (int i = 1; i < 10; i++) {
             for (int j = 1; j < 10; j++) {
-                if (j == 1){
+                if (j == 1) {
                     if (i == 1) {
                         System.out.printf("%4s", "|");
                     } else {
-                        System.out.printf("%2d", i);
-                        System.out.printf("%2s", "|");
+                        System.out.printf("%2d%2s", i, "|");
                     }
                 } else {
                     System.out.printf("%4d", i * j);
@@ -197,7 +191,7 @@ public class CyclesTheme {
             if (i == 1) {
                 System.out.print("\n-------------------------------------");
             }
-            System.out.print("\n");
+            System.out.println();
         }
     }
 }
