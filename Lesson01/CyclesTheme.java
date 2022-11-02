@@ -141,34 +141,34 @@ public class CyclesTheme {
 
         System.out.println("\n8. Проверка, является ли число палиндромом");
         int origNumber = 1234321;
-        int compareNumber = 0;
-        int x = origNumber;
-        int order = 1_000_000;
-        while (x != 0) {
-            compareNumber += x % 10 * order;
-            x /= 10;
-            order /= 10;
-            }
-        if (origNumber ==  compareNumber) {
+        int compareNumber = origNumber % 10;
+        int copyOrigNumber = origNumber;
+        int order = 1;
+        while (copyOrigNumber != 0) {
+            copyOrigNumber /= 10;
+            order *= 10;
+            compareNumber += copyOrigNumber % 10 * order;
+        }
+        if (origNumber == compareNumber) {
             System.out.println("Число X является палиндромом.");
+        } else {
+            System.out.println("Число X не является палиндромом.");
         }
 
         System.out.println("\n9. Определение, является ли число счастливым.");
         int luckyNumber = 111111;
-        int abc = 0;
-        int sum = 0;
-        int z = 100_000;
-        for (int j = 0; j < 6; j++) {
-            if (luckyNumber > 1000) {
-                abc += luckyNumber / z;
-            } else {
-                sum += luckyNumber / z;
-            }
-            luckyNumber %= z;
-            z /= 10;
+        int topNumbers = luckyNumber / 1000;
+        int bottomNumbers = luckyNumber % 1000;
+        int topHalf = 0; 
+        int bottomHalf = 0; 
+        for (int j = 0; j < 3; j++) {
+            topHalf += topNumbers % 10;
+            topNumbers /= 10;
+            bottomHalf += bottomNumbers % 10;
+            bottomNumbers /= 10;
         }
-        System.out.print("Сумма цифр abc = " + abc + ", sum = " + sum + "\nЧисло ");
-        if (abc == sum) {
+        System.out.print("Сумма цифр topHalf = " + topHalf + ", bottonHalf = " + bottomHalf + "\nЧисло ");
+        if (topHalf == bottomHalf) {
             System.out.println("является счастливым.");
         } else {
             System.out.println("не является счастливым.");
