@@ -154,21 +154,21 @@ public class CyclesTheme {
         }
 
         System.out.println("\n9. Определение, является ли число счастливым.");
-        int number10 = 111111;
+        int luckyNumber = 111111;
         int abc = 0;
-        int sum10 = 0;
+        int sum = 0;
         int z = 100_000;
         for (int j = 0; j < 6; j++) {
-            if (number10 > 1000) {
-                abc += number10 / z;
+            if (luckyNumber > 1000) {
+                abc += luckyNumber / z;
             } else {
-                sum10 += number10 / z;
+                sum += luckyNumber / z;
             }
-            number10 %= z;
+            luckyNumber %= z;
             z /= 10;
         }
-        System.out.print("Сумма цифр abc = " + abc + ", sum = " + sum10 + "\nЧисло ");
-        if (abc == sum10) {
+        System.out.print("Сумма цифр abc = " + abc + ", sum = " + sum + "\nЧисло ");
+        if (abc == sum) {
             System.out.println("является счастливым.");
         } else {
             System.out.println("не является счастливым.");
