@@ -156,7 +156,7 @@ public class CyclesTheme {
         }
 
         System.out.println("\n9. Определение, является ли число счастливым.");
-        int luckyNumber = 111111;
+        int luckyNumber = 160151;
         int topNumbers = luckyNumber / 1000;
         int bottomNumbers = luckyNumber % 1000;
         int topHalf = 0; 
