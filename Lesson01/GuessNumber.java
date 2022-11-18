@@ -1,21 +1,22 @@
 public class GuessNumber {
     
     public static void main(String[] args) {
-        int lowerLimit = 0;
-        int upperLimit = 100;
-        int riddledNumber = 49; // загаданное число
+        int startRange = 0;
+        int endRange = 100;
+        int secretNumber = 49;
         int userNumber = 35;
         do {
-            if (userNumber > riddledNumber) {
+            if (userNumber > secretNumber) {
                 System.out.println("Число " + userNumber + " больше того, что загадал компьютер.");
-                upperLimit = userNumber;
+                endRange = userNumber;
                 
             } else {
                 System.out.println("Число " + userNumber + " меньше того, что загадал компьютер.");
-                lowerLimit = userNumber;
+                startRange = userNumber;
             }
-            userNumber = lowerLimit + (upperLimit - lowerLimit) / 2; // находим длину отрезка, делим ее пополам, прибавляем к нижней границе
-        } while (userNumber != riddledNumber);
+            // находим длину отрезка, делим ее пополам, прибавляем к нижней границе
+            userNumber = startRange + (endRange - startRange) / 2;
+        } while (userNumber != secretNumber);
         System.out.println("Вы победили!");
     }
 }
