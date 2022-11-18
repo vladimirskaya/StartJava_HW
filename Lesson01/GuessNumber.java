@@ -9,7 +9,6 @@ public class GuessNumber {
             if (userNumber > secretNumber) {
                 System.out.println("Число " + userNumber + " больше того, что загадал компьютер.");
                 endRange = userNumber;
-                
             } else {
                 System.out.println("Число " + userNumber + " меньше того, что загадал компьютер.");
                 startRange = userNumber;
