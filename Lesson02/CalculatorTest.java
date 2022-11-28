@@ -8,6 +8,7 @@ public class CalculatorTest {
         char sign;
         Calculator calc = new Calculator();
         Scanner scanner = new Scanner(System.in);
+        
         do {
             System.out.print("Введите первое число: ");
             calc.number1 = scanner.nextInt();

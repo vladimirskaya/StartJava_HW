@@ -5,7 +5,6 @@ public class Calculator {
     char sign;
     int result;
 
-    // отвечает за проверку мат.знака
     public boolean isSignCorrect(char sign) {
         if ((sign == '+') || (sign == '-') || (sign == '*') || (sign == '/') || (sign == '^') 
                     || (sign == '%')) {
@@ -16,7 +15,6 @@ public class Calculator {
     }
 
     public void calculate(char sign) {
-
         if (isSignCorrect(sign)) {
             this.sign = sign;
             switch (this.sign) {
