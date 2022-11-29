@@ -9,16 +9,20 @@ public class CalculatorTest {
         Scanner scanner = new Scanner(System.in);
 
         do {
-            System.out.print("Введите первое число: ");
-            calc.number1 = scanner.nextInt();
+            do {
+                System.out.print("Введите первое число: ");
+                calc.setNumber1(scanner.nextInt());
+            } while (calc.getNumber1() == -1);
             do {
                 System.out.print("Введите знак математической операции: ");
                 calc.setSign(scanner.next().charAt(0));
-            } while (calc.getSign() == ' ');
-            System.out.print("Введите второе число: ");
-            calc.number2 = scanner.nextInt();
+            } while (calc.getSign() == '\u0000');
+            do {
+                System.out.print("Введите второе число: ");
+                calc.setNumber2(scanner.nextInt());
+            } while (calc.getNumber2() == -1);
             calc.calculate();
-            System.out.println(calc.number1 + " " + calc.getSign() + " " + calc.number2 + " = " + calc.result);
+            System.out.println(calc.getNumber1() + " " + calc.getSign() + " " + calc.getNumber2() + " = " + calc.getResult());
             do {
                 System.out.println("Хотите продолжить вычисления? [yes/no]: ");
                 userAnswer = scanner.next();
