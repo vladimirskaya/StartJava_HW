@@ -9,6 +9,8 @@ public class GuessNumberTest {
         System.out.print("Введите имя второго игрока: ");
         Player player2 = new Player(scanner.next());
         GuessNumber game = new GuessNumber(player1, player2);
-        game.playGame();
+        do {
+            game.playGame();
+        } while (!game.getIsEnded());
     }
 }
