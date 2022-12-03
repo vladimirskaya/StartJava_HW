@@ -16,10 +16,6 @@ public class Player {
     }
 
     public void setUserNumber(int number) {
-        System.out.println("переданное число: " + number);
-        System.out.println("больше нуля " + (number > 0));
-        System.out.println("меньше 100 " + (number <= 100));
-        // System.out.println("входит в полуинтервал " + ((number < 0) && (number <= 100)));
         if ((number > 0) && (number <= 100)) {
             userNumber = number;
         } else {
