@@ -9,11 +9,10 @@ public class Jaeger {
     private int strength;
     private int armor;
 
-    public Jaeger() {
-    }
+    public Jaeger() {}
 
-    public Jaeger(String name, String origin, float height, double weight, int speed, int strength,
-        int armor) {
+    public Jaeger(String name, String origin, float height, double weight,
+            int speed, int strength, int armor) {
         this.name = name;
         this.origin = origin;
         this.height = height;
@@ -77,8 +76,6 @@ public class Jaeger {
     public int getArmor() {
         return armor;
     }
-
-
 
     public void battle(Jaeger obj) {
         Jaeger randomObj1;
@@ -164,8 +161,8 @@ public class Jaeger {
 
     @Override
     public String toString() {
-        return String.format("\nName: %s\nOrigin: %s\nHeight: %.2f m\nWeight: %.3f tons\nSpeed: %d\nStrength: %d\n",
-            this.name, this.origin, this.height, this.weight, this.speed, this.strength);
-            // "fsf", "sdfsf", 5.6, 60.0, 10, 78);
+        return ("Name: " + name + "\nOrigin: " + origin + "\nHeight: " + height + " m" + 
+                "\nWeight: " + weight + " tons" + "\nSpeed: " + speed + 
+                "\nStrength: " + strength + "\n" );
     }
 }
