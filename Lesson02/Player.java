@@ -1,30 +1,26 @@
 public class Player {
     private String name;
-    private int userNumber;
+    private int number;
     
     public Player(String name) {
         this.name = name;
-        userNumber = -1;
-    }
-
-    public void setName(String name) {
-        this.name = name;
+        number = -1;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setUserNumber(int number) {
-        if ((number > 0) && (number <= 100)) {
-            userNumber = number;
+    public void setNumber(int num) {
+        if ((num > 0) && (num <= 100)) {
+            number = num;
         } else {
             System.out.println("Число не входит в полуинтервал (0 до 100]");
-            userNumber = -1;
+            number = -1;
         }
     }
 
-    public int getUserNumber() {
-        return userNumber;
+    public int getNumber() {
+        return number;
     }
 }
