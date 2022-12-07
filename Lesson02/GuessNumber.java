@@ -13,8 +13,6 @@ public class GuessNumber {
         currentPlayer = player1;
     }
 
-    
-
     public void play() {
         init();
         boolean result;
