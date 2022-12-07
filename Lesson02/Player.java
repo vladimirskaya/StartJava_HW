@@ -4,19 +4,18 @@ public class Player {
     
     public Player(String name) {
         this.name = name;
-        number = -1;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setNumber(int num) {
-        if ((num > 0) && (num <= 100)) {
-            number = num;
+    public void setNumber(int number) {
+        if ((number > 0) && (number <= 100)) {
+            this.number = number;
         } else {
             System.out.println("Число не входит в полуинтервал (0 до 100]");
-            number = -1;
+            this.number = 0;
         }
     }
 
