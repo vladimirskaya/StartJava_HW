@@ -1,10 +1,9 @@
 import java.util.Scanner;
 
 public class GuessNumberTest {
-    
+
     public static void main(String[] args) {
-        boolean isEnded = false;
-        String answerForContinue;
+        String playerAnswer;
         Scanner scanner = new Scanner(System.in);
         System.out.print("\nВведите имя первого игрока: ");
         Player player1 = new Player(scanner.next());
@@ -13,19 +12,10 @@ public class GuessNumberTest {
         GuessNumber game = new GuessNumber(player1, player2);
         do {
             game.play();
-            System.out.println("Хотите продолжить игру? [yes/no]: ");
-            // Scanner scanner = new Scanner(System.in);
-            answerForContinue = scanner.next();
-            if ("yes".equals(answerForContinue)) {
-                isEnded = false;;
-            } else if ("no".equals(answerForContinue)) {
-                isEnded  = true;
-            } else {
-                do {
-                    System.out.println("Хотите продолжить игру? [yes/no]: ");
-                    answerForContinue = scanner.next();
-                    } while (!(("yes".equals(answerForContinue)) || ("no".equals(answerForContinue))));
-            }
-        } while (!isEnded);
+            do {
+                System.out.println("Хотите продолжить игру? [yes/no]: ");
+                playerAnswer = scanner.next();
+            } while (!(("yes".equals(playerAnswer)) || ("no".equals(playerAnswer))));
+        } while (!("no".equals(playerAnswer)));
     }
 }
