@@ -2,10 +2,10 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class GuessNumber {
-    private static Player player1;
-    private static Player player2;
-    private static Player currentPlayer;
-    private static int secretNumber;
+    private Player player1;
+    private Player player2;
+    private Player currentPlayer;
+    private int secretNumber;
 
     public GuessNumber(Player player1, Player player2) {
         this.player1 = player1;
@@ -15,14 +15,14 @@ public class GuessNumber {
 
     public void play() {
         init();
-        boolean result;
         do {
             inputNumber(currentPlayer);
-            result = compareNumber(currentPlayer);
-            if (!result) {
+            if (!compareNumber(currentPlayer)) {
                 changePlayer(currentPlayer);
+            } else {
+                break;
             }
-        } while (!result);
+        } while (true);
     }
 
     private void init() {
@@ -33,16 +33,16 @@ public class GuessNumber {
         System.out.println("Число отгадывает " + currentPlayer.getName());
     }
 
-    private static void inputNumber(Player currentPlayer) {
+    private void inputNumber(Player player) {
         Scanner scanner = new Scanner(System.in);
         do {
             System.out.println("Введите число: ");
             int number = scanner.nextInt();
-            currentPlayer.setNumber(number);
-        } while (currentPlayer.getNumber() == 0);
+            player.setNumber(number);
+        } while (player.getNumber() == 0);
     }
 
-    private static boolean compareNumber(Player player) {
+    private boolean compareNumber(Player player) {
         if (player.getNumber() == secretNumber) {
             System.out.println(player.getName() + " угадал число!");
             return true;
@@ -52,16 +52,12 @@ public class GuessNumber {
             } else {
                 System.out.println("Число " + player.getNumber() + " меньше того, что загадал компьютер.");
             }
-            return false;
         }
+        return false;
     }
 
-    private static void changePlayer(Player player) {
-        if (player == player1) {
-            currentPlayer = player2;
-        } else {
-            currentPlayer = player1;
-        }
+    private void changePlayer(Player player) {
+        currentPlayer = (player == player1) ? player2 : player1;
         System.out.println("Число отгадывает " + currentPlayer.getName());
     }
 }
