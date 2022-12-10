@@ -24,6 +24,7 @@ public class GuessNumber {
     private void init() {
         Random random = new Random();
         secretNumber = random.nextInt(100) + 1;
+        System.out.println("Случайное число: " + secretNumber);
     }
 
     private void inputNumber(Player player) {
