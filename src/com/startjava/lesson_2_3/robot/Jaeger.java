@@ -1,3 +1,5 @@
+package com.startjava.lesson_2_3.robot;
+
 import java.util.Random;
 
 public class Jaeger {
